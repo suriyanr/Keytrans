@@ -1,0 +1,9 @@
+Installation:
+=============
+	Unzip the downloaded Vutam3.zip, to get Vutam3.exe and this Install.txt files. Double click Vutam3.exe and it will: i) install the KeyTransU.exe in Program Files folder, and ii) create shortcut "Vutam3" in Desktop. On Vista, it might have to be run with higher privileges.
+
+	In Vista right click the UTAM font file in Program Files folder and choose Install. In all other Windows versions you will have to manually install the UTAM font from Control Panel -> Fonts.
+
+	Now you are all set.
+
+	Please continue with the ReadMe file in the Program Files/KeyTransU folder.

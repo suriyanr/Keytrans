@@ -1,0 +1,12 @@
+Build:
+======
+
+a) The source was built under MINGW. Hence, you need to install MINGW from 
+   www.mingw.org (gcc/MSYS developer toolkit/MSYS/MinGW Runtime/
+   MinGW Utilities/MinGW/Windows API/binutils/gdb/make)
+
+b) untar the distribution:
+   tar -zxvf KeyTrans.tgz
+
+c) cd KeyTrans
+   make

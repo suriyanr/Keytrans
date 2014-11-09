@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Project KeyTrans</title>
+  <meta name="generator" content="Microsoft FrontPage 5.0"
+  />
+</head>
+
+<body>
+<h1 style="text-align: center">KEYTRANS - The Keyboard Translator</h1>
+
+<h3>Introduction:</h3>
+
+<div style="border: 1px solid #0000FF; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+  <b>KEYTRANS</b> comprises of two components - A Font (VUTAM), and a Keyboard 
+Translator.&nbsp; The Keyboard Translator sits between the Application and the 
+Keyboard driver. This helps it to translate Key Strokes that an application 
+receives. In its current avatar, it works with a custom made font called &quot;VUTAM&quot;.<h4>The VUTAM Font (Vutam.ttf):</h4>
+
+  <div style="border: 4px solid #000080; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+    <b>Vutam</b> is a Tamil TTF font, developed by Sri V. Ramasami. It was 
+developed to improve on rendering, which seems to be lacking in the other 
+commonly available Tamil fonts. The Layout is also very easy to remember. The <b>
+Vutam</b> font needs to be installed to view files written using the <b>Vutam</b> 
+font.</div>
+
+<h4>The Keyboard Translator (KeyTrans.exe):</h4>
+
+  <div style="border: 4px solid #000080; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+    <b>KeyTrans</b> comes into play when text needs to be entered using the <b>
+Vutam</b> font mentioned above.<p><br>
+The Characters fall in three <b>Buckets</b>.<br>
+Bucket 1, is what is typed in Normal Mode.<br>
+Bucket 2, is what is typed in Shift (CAPS) Mode.<br>
+Bucket 3, is what is typed in Ctrl+Alt Mode.<br>
+<br>
+<b>KeyTrans</b> maps the characters which exist in Bucket 3. They also help in 
+effectuating Ligatures for 'de' and 'dee'.<br>
+Currently there are only two ligatures: d and ] = de. d and } = dee.<br>
+<br>
+Bucket 1: All Short vowels and all 23 dotted and undotted consonants are 
+accomodated.<br>
+<br>
+Bucket 2: All Long vowels and 23 consonants with their vowel marker &quot;vu&quot; have 
+been accomodated.<br>
+<br>
+Bucket 3: All 23 consonants with their vowel marker &quot;vU&quot; have been accomodated.<br>
+<br>
+<b>Note:</b> Tamil vowels correspond to their English counterparts. Consonants 
+are 18 + 5 = 23. Some extras may be found in Bucket 3. Punctuation Marks &quot;lost&quot; 
+in Bucket 1 and Bucket 2, are &quot;found&quot; in Bucket 3.</p>
+
+  </div>
+</div>
+
+<h3>&nbsp;</h3>
+
+<h3>Download:</h3>
+
+<div style="border-style: solid; border-color: #0000FF">
+  <ul>
+    <li>
+    <pre><tt><a href="http://sarovar.org/projects/keytrans/" target="_blank">http://sarovar.org/projects/keytrans/</a></tt></pre>
+    </li>
+  </ul>
+</div>
+
+<h3>&nbsp;</h3>
+
+<h3>Installation:</h3>
+
+<div style="border: 1px solid #0000FF; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+
+<h4><br>
+Installing KeyTrans:</h4>
+
+  <div style="border-style: solid; border-color: #000080">
+    &nbsp;&nbsp;&nbsp; Unzip the Downloaded Vutam.zip. Run Vutam.exe.</div>
+
+<h4><br>
+Installing the Font:</h4>
+
+  <div style="border: 4px solid #000080; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+
+<ol>
+  <li>Open the Drive:\Windows\Fonts folder</li>
+  <li>Choose &quot;Install New Font&quot;. </li>
+  <li>In &quot;File&quot;, browse to the Drive/Folder where &quot;<b>Vutam.ttf</b>&quot; resides. 
+  Select it, and Press OK. </li>
+</ol>
+
+<p>It is installed as <b>VUTAM</b> in the Fonts folder.</p>
+
+  </div>
+</div>
+
+<h3>&nbsp;</h3>
+
+<h3>UnInstall:</h3>
+
+<div style="border: 1px solid #0000FF; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1">
+
+<h4>UnInstalling KeyTrans:</h4>
+
+  <div style="border-style: solid; border-color: #000080">
+    <ol>
+      <li>Exit out of the program if running (Check the system Tray, Right click 
+      on KeyTrans, and choose Exit.)</li>
+      <li>Delete the Drive:\Program Files\KeyTrans directory.</li>
+    </ol>
+  </div>
+
+<h4>UnInstalling the Font:</h4>
+
+  <div style="border-style: solid; border-color: #000080">
+    <ol>
+      <li>Delete the file Vutam.ttf from the Drive:\Windows\Fonts folder.</li>
+    </ol>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<h3></h3>
+</body>
+</html>

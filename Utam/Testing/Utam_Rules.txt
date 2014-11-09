@@ -1,0 +1,111 @@
+﻿RULES for Type_As_You_Write:
+=====================
+
+ye( ெ) matra ([):
+
+[( ெ) k(க) = கெ
+[( ெ) c(ச) = செ
+[( ெ) d(ட) = டெ
+[( ெ) t(த) = தெ
+[( ெ) p(ப) = பெ
+[( ெ) x(ற) = றெ
+
+[( ெ) w(ய) = யெ
+[( ெ) r(ர) = ரெ
+[( ெ) l(ல) = லெ
+[( ெ) v(வ) = வெ
+[( ெ) z(ழ) = ழெ
+[( ெ) f(ள) = ளெ
+
+[( ெ) g(ங) = ஙெ
+[( ெ) \(ஞ) = ஞெ
+[( ெ) b(ண) = ணெ
+[( ெ) q(ந) = நெ
+[( ெ) m(ம) = மெ
+[( ெ) n(ன) = னெ
+
+[( ெ) j(ஜ) = ஜெ
+[( ெ) s(ஸ) = ஸெ
+[( ெ) S(ஷ) = ஷெ
+[( ெ) h(ஹ) = ஹெ
+[( ெ) J(க்ஷ) = க்ஷெ
+
+yE( ே) matra ({):
+
+{( ே) k(க) = கே
+{( ே) c(ச) = சே
+{( ே) d(ட) = டே
+{( ே) t(த) = தே
+{( ே) p(ப) = பே
+{( ே) x(ற) = றே
+
+{( ே) w(ய) = யே
+{( ே) r(ர) = ரே
+{( ே) l(ல) = லே
+{( ே) v(வ) = வே
+{( ே) z(ழ) = ழே
+{( ே) f(ள) = ளே
+
+{( ே) g(ங) = ஙே
+{( ே) \(ஞ) = ஞே
+{( ே) b(ண) = ணே
+{( ே) q(ந) = நே
+{( ே) m(ம) = மே
+{( ே) n(ன) =னே
+
+{( ே) j(ஜ) =  ஜே
+{( ே) s(ஸ) = ஸே
+{( ே) S(ஷ) = ஷே
+{( ே) h(ஹ) = ஹே
+{( ே) J(க்ஷ) = க்ஷே
+
+ai( ை) matra (I):
+
+I( ை) k(க) = கை
+I( ை) c(ச) = சை
+I( ை) d(ட) = டை
+I( ை) t(த) = தை
+I( ை) p(ப) = பை
+I( ை) x(ற) = றை
+
+I( ை) w(ய) = யை
+I( ை) r(ர) = ரை
+I( ை) l(ல) = லை
+I( ை) v(வ) = வை
+I( ை) z(ழ) = ழை
+I( ை) f(ள) = ளை
+
+I( ை) g(ங) = ஙை
+I( ை) \(ஞ) = ஞை
+I( ை) b(ண) = ணை
+I( ை) q(ந) = நை
+I( ை) m(ம) = மை
+I( ை) n(ன) =னை
+
+I( ை) j(ஜ) = ஜை
+I( ை) s(ஸ) = ஸை
+I( ை) S(ஷ) = ஷை
+I( ை) h(ஹ) = ஹை
+I( ை) J(க்ஷ) = க்ஷை
+
+
+**********************************************************
+VOWELS Assignment:
+==============
+
+a = a = அ (pulli in ')
+e = e = இ (matra in ])
+i = i = ஐ (matra in I)
+o = o = ஒ (matra in [, followed by consonant, & /)
+u = u = உ (matra in H for 5 Sanscrit  & Tamil consonants) Not used while writing Tamil consonants. *
+ye = y = எ (matra in [)
+
+aa = A = ஆ (matra in /)
+ee = E = ஈ (matra in })
+oo = O = ஓ (matra in {, followed by consonant, & /)
+uu = U = ஊ (matra in BUCK3 h for 5 Sanscrit & Tamil consonants) Not used while writing Tamil consonants. *
+yE = Y = ஏ (matra in {)
+
+* NOTE: Hence the necessity for VUTAM, where u & U marked consonants can be typed in one go, w/o u or U vowel marks or matras. There are differances in writing Tamil and Unicode Tamil!!
+
+*******************************************

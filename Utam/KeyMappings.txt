@@ -1,0 +1,373 @@
+		VUTAM3 Typewriter: All 4 Buckets key mappings.
+		=================================
+
+CONTENTS:
+========
+
+I. Character map of 4 buckets.
+II. Ligature rules.
+III. Array provisions.
+IV. Suggested design.
+
+
+I. Character Map (figs. in Dec.):
+  ====================
+
+Bucket 1 (Normal)
+-------------------
+
+VK_APOSTROPHE == 96 
+VK_1 == 49 
+VK_2 == 50 
+VK_3 == 51 
+VK_4 == 52 
+VK_5 == 53 
+VK_6 == 54 
+VK_7 == 55 
+VK_8 == 56 
+VK_9 == 57 
+VK_0 == 48 
+VK_MINUS == 45 
+VK_EQUAL == 61 
+
+VK_Q == 2984 
+VK_W == 2991 
+VK_E == 2951 
+VK_R == 2992 
+VK_T == 2980 
+VK_Y == 2958 
+VK_U == 2953 
+VK_I == 2960 
+VK_O == 2962 
+VK_P == 2986 
+VK_BRA_OPEN  == 32;3014 // liga.seq. (ye matra)
+VK_BRA_CLOSE == 3007 
+VK_BACK_SLASH == 2974 
+
+VK_A == 2949 
+VK_S == 3000 
+VK_D == 2975 
+VK_F == 2995 
+VK_G == 2969 
+VK_H == 3001 
+VK_J == 2972 
+VK_K == 2965 
+VK_L == 2994 
+VK_COLON == 59
+VK_QUOTES == 3021 
+
+VK_Z == 2996 
+VK_X == 2993 
+VK_C == 2970 
+VK_V == 2997 
+VK_B == 2979 
+VK_N == 2985 
+VK_M == 2990 
+VK_COMMA  == 44 
+VK_DOT  == 46 
+VK_FOR_SLASH  == 3006
+
+Bucket 2 (Shift)
+-----------------
+
+VK_APOSTROPHE == 126 
+VK_1 == 33 
+VK_2 == 64 
+VK_3 == 35 
+VK_4 == 36 
+VK_5 == 37 
+VK_6 == 94 
+VK_7 == 38 
+VK_8 == 42 
+VK_9 == 40 
+VK_0 == 41 
+VK_MINUS == 95 
+VK_EQUAL == 43 
+
+VK_Q == 2984;3009 // liga.seq.
+VK_W == 2991;3009 // liga.seq.
+VK_E == 2952 
+VK_R == 2992;3009 // liga.seq.
+VK_T == 2980;3009 // liga.seq.
+VK_Y == 2959 
+VK_U == 2954 
+VK_I == 32;3016 // liga.seq. (ai matra)
+VK_O == 2963 
+VK_P == 2986;3009 // liga.seq.
+VK_BRA_OPEN == 32;3015 // liga.seq.  (yE matra)
+VK_BRA_CLOSE == 3008 
+VK_BACK_SLASH == 2974;3009 // liga.seq.
+
+VK_A == 2950 
+VK_S == 2999 
+VK_D == 2975;3009 // liga.seq.
+VK_F == 2995;3009 // liga.seq.
+VK_G == 2969;3009 // liga.seq.
+VK_H == 3009 
+VK_J == 2965;3021;2999 // liga.seq. (ksha)
+VK_K == 2965;3009 // liga.seq.
+VK_L == 2994;3009 // liga.seq.
+VK_COLON  == 58 
+VK_QUOTES == 34 
+
+VK_Z == 2996;3009 // liga.seq.
+VK_X == 2993;3009 // liga.seq.
+VK_C == 2970;3009 // liga.seq.
+VK_V == 2997;3009 // liga.seq.
+VK_B == 2979;3009 // liga.seq.
+VK_N == 2985;3009 // liga.seq.
+VK_M == 2990;3009 // liga.seq.
+VK_COMMA == 60 
+VK_DOT == 62 
+VK_FOR_SLASH == 63 
+
+Bucket 3 (Ctrl+Alt)
+--------------------
+
+VK_APOSTROPHE == 3024 // OM
+VK_1 == 3047 // Tamil 1
+VK_2 == 3048 
+VK_3 == 3049 
+VK_4 == 3050 
+VK_5 == 3051 
+VK_6 == 3052 
+VK_7 == 3053 
+VK_8 == 3054 
+VK_9 == 3055 
+VK_0 == 3046 
+VK_MINUS == 123 
+VK_EQUAL == 125 
+
+VK_Q == 2984;3010 // liga.seq.
+VK_W == 2991;3010 // liga.seq.
+VK_E == 3065 
+VK_R == 2992;3010 // liga.seq
+VK_T == 2980;3010 // liga.seq.
+VK_Y == 3061 
+VK_U == 3060 
+VK_I == 3059 
+VK_O == 3064 
+VK_P == 2986;3010 // liga.seq.
+VK_BRA_OPEN == 91 
+VK_BRA_CLOSE == 93 
+VK_BACK_SLASH == 2974;3010 // liga.seq.
+
+VK_A == 2947 
+VK_S == 3000;3021;2992;3008 // liga.seq. (srii)
+VK_D == 2975;3010 // liga.seq.
+VK_F == 2995;3010 // liga.seq.
+VK_G == 2969;3010 // liga.seq.
+VK_H == 3010 
+VK_J == 3066 
+VK_K == 2965;3010 // liga.seq.
+VK_L == 2994;3010 // liga.seq.
+VK_COLON == 167 
+VK_QUOTES == 39 
+
+VK_Z ==  2996;3010 // liga.seq.
+VK_X ==  2993;3010 // liga.seq.
+VK_C ==  2970;3010 // liga.seq.
+VK_V ==  2997;3010 // liga.seq.
+VK_B ==  2979;3010 // liga.seq.
+VK_N ==  2985;3010 // liga.seq.
+VK_M ==  2990;3010 // liga.seq.
+VK_COMMA == 92 
+VK_DOT == 124 
+VK_FOR_SLASH == 47 
+
+Bucket 4 (Ctrl+Alt+Shift)
+--------------------------
+
+VK_APOSTROPHE == 65 // A
+VK_1 == 66 // B
+VK_2 == 67 // C
+VK_3 == 68 // D
+VK_4 == 69 // E
+VK_5 == 70 // F
+VK_6 == 71 // G
+VK_7 == 72 // H
+VK_8 == 73 // I
+VK_9 == 74 // J
+VK_0 == 75 // K
+VK_MINUS == 76 // L 
+VK_EQUAL == 77 // M
+
+VK_Q == 113 // q
+VK_W == 119 // w
+VK_E == 101 // e 
+VK_R == 114 // r
+VK_T == 116 // t
+VK_Y == 121 // y 
+VK_U == 117 // u 
+VK_I == 105 // i 
+VK_O == 111 // o 
+VK_P == 112 // p
+VK_BRA_OPEN == 78 // N 
+VK_BRA_CLOSE == 79 // O 
+VK_BACK_SLASH == 80 // P
+
+VK_A == 97 // a
+VK_S == 115 // s
+VK_D == 100 // d
+VK_F == 102 // f
+VK_G == 103 // g
+VK_H == 104 // h 
+VK_J == 106 // j 
+VK_K == 107 // k
+VK_L == 108 // l
+VK_COLON == 81 // Q 
+VK_QUOTES == 82 // R 
+
+VK_Z ==  122 // z
+VK_X ==  120 // x
+VK_C ==  99 // c
+VK_V ==  118 // v
+VK_B ==  98 // b
+VK_N ==  110 // n
+VK_M ==  109 // m
+VK_COMMA == 83 // S 
+VK_DOT == 84 // T
+VK_FOR_SLASH == 85 // U 
+
+<END OF CHARACTER MAP>
+
+
+II. LIGATURES: 
+  ========
+
+ligature (replace sequence); 2:2 (no. of keys : no. of characters)
+--------------------------------------------------------------------
+
+(ye matra)
+
+1) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_Q, 0, 2} == 2984;3014
+2) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_W, 0, 2} == 2991;3014
+3) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_R, 0, 2} == 2992;3014
+4) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_T, 0, 2} == 2980;3014
+5) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_P, 0, 2} == 2986;3014
+6) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_BACK_SLASH, 0, 2} == 2974;3014
+
+7) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_S, 0, 2} == 3000;3014
+8) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_D, 0, 2} == 2975;3014
+9) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_F, 0, 2} == 2995;3014
+10) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_G, 0, 2} == 2969;3014
+11) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_H, 0, 2} == 3001;3014
+12) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_J, 0, 2} == 2972;3014
+13) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_K, 0, 2} == 2965;3014
+14) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_L, 0, 2} == 2994;3014
+
+15) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_Z, 0, 2} == 2996;3014
+16) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_X, 0, 2} == 2993;3014
+17) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_C, 0, 2} == 2970;3014
+18) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_V, 0, 2} == 2997;3014
+19) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_B, 0, 2} == 2979;3014
+20) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_N, 0, 2} == 2985;3014
+21) {BUCKET1, VK_BRA_OPEN, BUCKET1, VK_M, 0, 2} == 2990;3014
+
+22) {BUCKET1, VK_BRA_OPEN, BUCKET2, VK_S, 0, 2} == 2999;3014
+
+(yE matra)
+
+1) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_Q, 0, 2} == 2984;3015
+2) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_W, 0, 2} == 2991;3015
+3) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_R, 0, 2} == 2992;3015
+4) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_T, 0, 2} == 2980;3015
+5) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_P, 0, 2} == 2986;3015
+6) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_BACK_SLASH, 0, 2} == 2974;3015
+
+7) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_S, 0, 2} == 3000;3015
+8) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_D, 0, 2} == 2975;3015
+9) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_F, 0, 2} == 2995;3015
+10) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_G, 0, 2} == 2969;3015
+11) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_H, 0, 2} == 3001;3015
+12) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_J, 0, 2} == 2972;3015
+13) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_K, 0, 2} == 2965;3015
+14) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_L, 0, 2} == 2994;3015
+
+15) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_Z, 0, 2} == 2996;3015
+16) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_X, 0, 2} == 2993;3015
+17) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_C, 0, 2} == 2970;3015
+18) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_V, 0, 2} == 2997;3015
+19) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_B, 0, 2} == 2979;3015
+20) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_N, 0, 2} == 2985;3015
+21) {BUCKET2, VK_BRA_OPEN, BUCKET1, VK_M, 0, 2} == 2990;3015
+
+22) {BUCKET2, VK_BRA_OPEN, BUCKET2, VK_S, 0, 2} == 2999;3015
+
+(ai matra)
+
+1) {BUCKET2, VK_I, BUCKET1, VK_Q, 0, 2} == 2984;3016
+2) {BUCKET2, VK_I, BUCKET1, VK_W, 0, 2} == 2991;3016
+3) {BUCKET2, VK_I, BUCKET1, VK_R, 0, 2} == 2992;3016
+4) {BUCKET2, VK_I, BUCKET1, VK_BACK_SLASH, 0, 2} == 2974;3016
+5) {BUCKET2, VK_I, BUCKET1, VK_T, 0, 2} == 2980;3016
+6) {BUCKET2, VK_I, BUCKET1, VK_P, 0, 2} == 2986;3016
+
+7) {BUCKET2, VK_I, BUCKET1, VK_S, 0, 2} == 3000;3016
+8) {BUCKET2, VK_I, BUCKET1, VK_D, 0, 2} == 2975;3016
+9) {BUCKET2, VK_I, BUCKET1, VK_F, 0, 2} == 2995;3016
+10) {BUCKET2, VK_I, BUCKET1, VK_G, 0, 2} == 2969;3016
+11) {BUCKET2, VK_I, BUCKET1, VK_H, 0, 2} == 3001;3016
+12) {BUCKET2, VK_I, BUCKET1, VK_J, 0, 2} == 2972;3016
+13) {BUCKET2, VK_I, BUCKET1, VK_K, 0, 2} == 2965;3016
+14) {BUCKET2, VK_I, BUCKET1, VK_L, 0, 2} == 2994;3016
+
+15) {BUCKET2, VK_I, BUCKET1, VK_Z, 0, 2} == 2996;3016
+16) {BUCKET2, VK_I, BUCKET1, VK_X, 0, 2} == 2993;3016
+17) {BUCKET2, VK_I, BUCKET1, VK_C, 0, 2} == 2970;3016
+18) {BUCKET2, VK_I, BUCKET1, VK_V, 0, 2} == 2997;3016
+19) {BUCKET2, VK_I, BUCKET1, VK_B, 0, 2} == 2979;3016
+20) {BUCKET2, VK_I, BUCKET1, VK_N, 0, 2} == 2985;3016
+21) {BUCKET2, VK_I, BUCKET1, VK_M, 0, 2} == 2990;3016
+
+22) {BUCKET2, VK_I, BUCKET2, VK_S, 0, 2} == 2999;3016
+
+
+liga.(rep.seq.) 2:4 (for ksha)
+-----------------------------
+
+1) {BUCKET1, VK_BRA_OPEN, BUCKET2, VK_J, 0, 4} == 2965;3021;2999;3014
+2) {BUCKET2, VK_BRA_OPEN, BUCKET2, VK_J, 0, 4} == 2965;3021;2999;3015
+3) {BUCKET2, VK_I, BUCKET2, VK_J, 0, 4} == 2965;3021;2999;3016
+
+
+<END OF LIGATURES>
+
+III. Summary for array requirements:
+   =====================
+
+liga.seq.:
+---------
+
+A) 1:4 --> 1 (sri)
+B) 1:3 --> 1 (ksha)
+C) 1:2 --> 39 (18u+18U+3VM)
+
+liga.rep.seq.
+------------
+
+A) 2:2 --> 66 (22X3VM)
+B) 2:4 --> 3 (1X3VM)
+
+<END OF SUMMARY>
+
+IV. SUGGESTED DESIGN:
+   ===============
+
+1). This will have a max. possible 4 buckets, using, a) Normal, b) Shift, c) Ctrl+Alt and d) Ctrl+Alt+Shift
+2). Any character in BMP (FFFF) to be mappable to any key in any bucket. Character width in dec. translates to 5 digits.
+3) Any key in any bucket (re)mapable to a max. of 4 characters.
+4) Space bar to be given a VK name (VK_SPACE), so that it can also be used for forming a ligature.
+5) Existing ligature rules should be editable & new ones addable.
+6) Max. of 4 (min.of 2) consequtive keys (key history) to be monitored for any ligature.
+7) The resultant of any ligature to be a max. of 4 characters of individual width of 5 digits.
+8) Provision for a max. of 500 ligature rules.
+9) Out of the many available ini files (of differant names and content), it should be possible to select the desired one (lookup), by the user. File names may be xyz_KeyTrans.ini
+10) No default internal mapping to be provided.
+
+
+<END OF SUGGESTED DESIGN)
+
+<EOF> 
+
+**********************************************

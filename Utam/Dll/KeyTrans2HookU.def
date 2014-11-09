@@ -1,0 +1,10 @@
+EXPORTS
+	installhook
+	releasehook
+	DllMain
+	InitialiseMap
+	DebugWriteMap
+	SetDebugFile
+	log_string
+	GetHookTranslationEnabled
+	SetHookTranslationEnabled

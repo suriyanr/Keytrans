@@ -1,0 +1,221 @@
+# KeyTransU_TamPhon.map
+# Uses Buckets 1 & 2 for Tamil and 3 & 4 for English.
+# VK_Space & VK_Tab not used.
+#
+# So now for the format of the ini file. Each line is a rule.
+# The character '=' seperates the  LHS and the RHS
+# A line starting with a # will be discarded as a comment line.
+#
+# Example of a simple 1 to 1 translation:
+# BUCKET1 VK_A = 2949
+#
+# Example of a 1 to 2 translation:
+# BUCKET1 VK_BRA_OPEN = 32 3014
+#
+# Example of a 1 to 3 translation:
+# BUCKET2 VK_J = 2965 3021 2999
+#
+# Example of a 1 to 4 translation:
+# BUCKET3 VK_S = 3000 3021 2992 3008
+#
+# Example of a 2 to 2 translation:
+# BUCKET1 VK_BRA_OPEN BUCKET1 VK_S = 3000 3014
+#
+# Example of a 2 to 4 translation:
+# BUCKET1 VK_BRA_OPEN BUCKET2 VK_J = 2965 3021 2999 3014
+# Start Maps for TamPhon.
+# Bucket 1 First Row
+BUCKET1 VK_APOSTROPHE = 3018
+BUCKET1 VK_1          = 49
+BUCKET1 VK_2          = 50
+BUCKET1 VK_3          = 51
+BUCKET1 VK_4          = 52
+BUCKET1 VK_5          = 53
+BUCKET1 VK_6          = 54
+BUCKET1 VK_7          = 55
+BUCKET1 VK_8          = 56
+BUCKET1 VK_9          = 57
+BUCKET1 VK_0          = 48
+BUCKET1 VK_MINUS      = 3016
+BUCKET1 VK_EQUAL      = 61
+
+# Bucket 1 Second Row
+BUCKET1 VK_Q          = 2984
+BUCKET1 VK_W          = 2991
+BUCKET1 VK_E          = 2951
+BUCKET1 VK_R          = 2992
+BUCKET1 VK_T          = 2980
+BUCKET1 VK_Y          = 2958
+BUCKET1 VK_U          = 2953
+BUCKET1 VK_I          = 2960
+BUCKET1 VK_O          = 2962
+BUCKET1 VK_P          = 2986
+BUCKET1 VK_BRA_OPEN   = 3014
+BUCKET1 VK_BRA_CLOSE  = 3007
+BUCKET1 VK_BACK_SLASH = 3009
+
+# Bucket 1 Third Row
+BUCKET1 VK_A          = 2949
+BUCKET1 VK_S          = 3000
+BUCKET1 VK_D          = 2975
+BUCKET1 VK_F          = 2995
+BUCKET1 VK_G          = 2969
+BUCKET1 VK_H          = 3001
+BUCKET1 VK_J          = 2972
+BUCKET1 VK_K          = 2965
+BUCKET1 VK_L          = 2994
+BUCKET1 VK_COLON      = 59
+BUCKET1 VK_QUOTES     = 3021
+
+# Bucket 1 Fourth Row
+BUCKET1 VK_Z          = 2996
+BUCKET1 VK_X          = 2993
+BUCKET1 VK_C          = 2970
+BUCKET1 VK_V          = 2997
+BUCKET1 VK_B          = 2979
+BUCKET1 VK_N          = 2985
+BUCKET1 VK_M          = 2990
+BUCKET1 VK_COMMA      = 44
+BUCKET1 VK_DOT        = 46
+BUCKET1 VK_FOR_SLASH  = 3006
+
+# Bucket 2 First Row
+BUCKET2 VK_APOSTROPHE = 3019
+BUCKET2	VK_1		= 33
+BUCKET2 VK_2		= 64
+BUCKET2 VK_3		= 35
+BUCKET2 VK_4    = 36
+BUCKET2 VK_5    = 37
+BUCKET2	VK_6		= 94
+BUCKET2	VK_7		= 38
+BUCKET2	VK_8		= 42
+BUCKET2	VK_9		= 40
+BUCKET2	VK_0		= 41
+BUCKET2 VK_MINUS  = 3020
+BUCKET2	VK_EQUAL	= 43
+
+# Bucket 2 Second Row
+BUCKET2 VK_Q    = 2947
+BUCKET2 VK_W    = 3063
+BUCKET2 VK_E		= 2952
+BUCKET2 VK_R    = 3000 3021 2992 3008
+BUCKET2 VK_T    = 3064
+BUCKET2 VK_Y		= 2959
+BUCKET2 VK_U		= 2954
+BUCKET2 VK_I    = 2964
+BUCKET2 VK_O		= 2963
+BUCKET2 VK_P    = 3062
+BUCKET2 VK_BRA_OPEN = 3015
+BUCKET2 VK_BRA_CLOSE    = 3008
+BUCKET2 VK_BACK_SLASH = 3010
+
+# Bucket 2 Third Row
+BUCKET2	VK_A		= 2950
+BUCKET2	VK_S		= 2999
+BUCKET2 VK_D    = 3059
+BUCKET2 VK_F    = 3060
+BUCKET2 VK_G    = 3061
+BUCKET2 VK_H    = 2965 3021 2999
+BUCKET2 VK_J    = 2974
+BUCKET2 VK_K    = 3065
+BUCKET2 VK_L    = 3066
+BUCKET2	VK_COLON	= 58
+BUCKET2	VK_QUOTES	= 34
+
+# Bucket 2 Fourth Row
+BUCKET2 VK_Z    = 3046
+BUCKET2 VK_X    = 3047
+BUCKET2 VK_C    = 3048
+BUCKET2 VK_V    = 3049
+BUCKET2 VK_B    = 3050
+BUCKET2 VK_N    = 3051
+BUCKET2 VK_M    = 3052
+BUCKET2 VK_COMMA  = 3053
+BUCKET2 VK_DOT    = 3054
+BUCKET2 VK_FOR_SLASH  = 3055
+
+# Bucket 3 First Row
+BUCKET3 VK_1 = 73
+BUCKET3 VK_2 = 73 73
+BUCKET3 VK_3 = 73 73 73
+BUCKET3 VK_4 = 73 86
+BUCKET3 VK_5 = 86
+BUCKET3 VK_6 = 86 73
+BUCKET3 VK_7 = 86 73 73
+BUCKET3 VK_8 = 86 73 73 73
+BUCKET3 VK_9 = 73 88
+BUCKET3 VK_0 = 88
+
+# Bucket 3 Second Row
+BUCKET3   VK_Q      = 113
+BUCKET3   VK_W      = 119
+BUCKET3   VK_E      = 101
+BUCKET3   VK_R      = 114
+BUCKET3   VK_T      = 116
+BUCKET3   VK_Y      = 121
+BUCKET3   VK_U      = 117
+BUCKET3   VK_I      = 105
+BUCKET3   VK_O      = 111
+BUCKET3   VK_P      = 112
+
+# Bucket 3 Third Row
+BUCKET3   VK_A      = 97
+BUCKET3   VK_S      = 115
+BUCKET3   VK_D      = 100
+BUCKET3   VK_F      = 102
+BUCKET3   VK_G      = 103
+BUCKET3   VK_H      = 104
+BUCKET3   VK_J      = 106
+BUCKET3   VK_K      = 107
+BUCKET3   VK_L      = 108
+
+# Bucket 3 Fourth Row
+BUCKET3 VK_Z        = 122
+BUCKET3   VK_X      = 120
+BUCKET3   VK_C      = 99
+BUCKET3   VK_V      = 118
+BUCKET3   VK_B      = 98
+BUCKET3   VK_N      = 110
+BUCKET3   VK_M      = 109
+BUCKET3 VK_COMMA = 60
+BUCKET3 VK_DOT = 62
+BUCKET3 VK_FOR_SLASH = 63
+#
+# Bucket4
+# First Row
+#
+# Second Row
+BUCKET4 VK_Q = 81
+BUCKET4 VK_W = 87
+BUCKET4 VK_E = 69
+BUCKET4 VK_R = 82
+BUCKET4 VK_T = 84
+BUCKET4 VK_Y = 89
+BUCKET4 VK_U = 85
+BUCKET4 VK_I = 73
+BUCKET4 VK_O = 79
+BUCKET4 VK_P = 80
+#
+# Third Row
+BUCKET4 VK_A = 65
+BUCKET4 VK_S = 83
+BUCKET4 VK_D = 68
+BUCKET4 VK_F = 70
+BUCKET4 VK_G = 71
+BUCKET4 VK_H = 72
+BUCKET4 VK_J = 74
+BUCKET4 VK_K = 75
+BUCKET4 VK_L = 76
+#
+# Fourth Row
+BUCKET4 VK_Z = 90
+BUCKET4 VK_X = 88
+BUCKET4 VK_C = 67
+BUCKET4 VK_V = 86
+BUCKET4 VK_B = 66
+BUCKET4 VK_N = 78
+BUCKET4 VK_M = 77
+#
+#
+# END
+

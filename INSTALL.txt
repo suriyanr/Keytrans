@@ -1,0 +1,21 @@
+Installation:
+=============
+
+Two methods are currently available.
+
+Method A: (Vutam.zip file)
+--------------------------
+a) Unzip Vutam.zip in a suitable directory.
+
+b) Install the Vutam.ttf file found therein.
+
+c) Run KeyTrans.exe
+
+
+Method B: (Vutam.exe)
+---------------------
+a) Run Vutam.exe.
+   It will install KeyTrans in the "Program Files\KeyTrans" folder.
+   It will create a short cut for you on the Desktop.
+   It will show you the installed directory which will contain the Vutam.ttf
+   font, which the user must install.

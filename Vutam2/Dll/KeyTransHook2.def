@@ -1,0 +1,6 @@
+EXPORTS
+        write_default_map
+	installhook
+	releasehook
+	DllMain
+

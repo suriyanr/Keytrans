@@ -1,0 +1,133 @@
+---------------------------------------------------------------------
+
+My ramblings of how the design should be.
+
+As I see it, each key stroke can expand to a max of 4 characters, with
+each character having a 5 decimal digit width.
+So each keystroke could possibly translate to a max of:
+  Alt press, 5 digit, Alt release sequence done 4 times.
+Apart from the above single keystroke translation, we now have ligatures
+where a sequence of characters upto 4 can give again a expansion of 4 characters which is of 5 digit decimal width.
+From the above writings, we can assume that we just have a massive ligature
+table, where a single character is a ligature of length one.
+If we didn't optimise for space. we would have an array as below:
+#ofstrokes, bucket, stroke, bucket, stroke, bucket, stroke, bucket, stroke
+This is 9 integers.
+This would be the key stroke we are trying to translate.
+The translated portion would appear as:
+#ofcharacters, char1indec, char2indec, char3indec, char4indec, char5indec
+This is 6 integers. (Dad wants to have 5 integers on the RHS of the rule)
+
+So without optimisations, we get an array that is 15 integers wide.
+How many rows? = say 500.
+So we need memory for the table as 500 * 15 integers about 7.5K * 4 bytes = 30K
+Which is quite OK.
+
+That settles that.
+So now for the format of the ini file. Each line is a rule.
+The character '=' seperates the  LHS and the RHS
+
+Example of a simple 1 to 1 translation:
+BUCKET1 VK_A = 2949
+
+Example of a 1 to 2 translation:
+BUCKET1 VK_BRA_OPEN = 32 3014
+
+Example of a 1 to 3 translation:
+BUCKET2 VK_J = 2965 3021 2999
+
+Example of a 1 to 4 translation:
+BUCKET3 VK_S = 3000 3021 2992 3008
+
+Example of a 2 to 2 translation:
+BUCKET1 VK_BRA_OPEN BUCKET1 VK_S = 3000 3014
+
+Example of a 2 to 4 translation:
+BUCKET1 VK_BRA_OPEN BUCKET2 VK_J = 2965 3021 2999 3014
+
+-----------------------------------------------
+
+So internally, its stored in the array KeyTrans[500][15]
+Curently we do not optimize for speed, hence just populate the array as
+read and store it internally in the KeyTrans[500][15] array.
+
+Things to do:
+=============
+1) Create a working KeyTransU.ini file 
+    <- Created it with all buckets defined.
+2) Rewrite initialise_map() in file Dll/KeyTrans2HookU.c to read in the ini
+   file and populate the KeyTrans[500][15] array - Done.
+3) Create function DebugWriteMap() to print out the KeyTrans[][] array after
+   its populated from the ini file, to check if we got it right.
+4) the headache of sharing data between exe and dll is resolved at last!
+5) shift, caps, alt, ctrl add a null entry in the key history - Rectified.
+6) Translations seem to work. Tried the top 6 examples in the ini file.
+7) Get the routines which translate the RHS as actual keystroke characters.
+
+
+The way the driver is invoked by the OS
+---------------------------------------
+When the hook calls keybd_event(), it just notes the keys to be sent.
+And once the hook returns, these same key presses and releases come back to
+the hook. So we should somehow keep track of our injections in another per
+process array, and when the hook gets called see if its something we injected.
+If so, we update that array and not process that stroke. This injection
+history array will be called KeysInjectionHistory[] and shall only carry
+the scan codes. It shall have a index pointer pointing to the last entry
+in the array. Index 0 is the one we need to be currently on the look out
+for and ignored. Have to study more on this. As of now, if its BS or
+the num pad keys, ignore them.
+The ignoring on BS and NUMPAD is enough. And we restore Alt key to how it was
+before injection.
+
+Another glitch. As of now we are translating on a key release. We should
+in fact translate on a key press. Why? for one, we see the 'a' printed on the key press, and as we send a BS and the Alt, we can see it being erased and
+written back. Secondly, when a key is repeated (held down), it will print
+series of 'a's and then when released we will write out one character.
+So it doesnt do the job properly. Hence, translate on key press.
+
+While injecting, if Ctrl is pressed we need to unpress it, for the Alt
+sequence to work. Havent checked if Shift needs to be unset as well.
+
+OK, So now if we do the Alt sequencing it works only with WordPad.
+If we change the injection code to use SendInput(), then now, I see it
+working with Outlook Express and WordPad. Word still doesnt work, but its
+an improvement. Hence, SendInput() is the way to go.
+
+With SendInput(), once we inject a unicode character, we get a call back
+for each character we injected. So if we inject 3000, we get a call back once
+and we should to not update that in the history, as it will throw the ligature
+spotting off. -> This is resolved if the vk got in the hook is VK_PACKET
+which means its a UNICODE packet, hence we ignore those.
+
+Made it read KeyTransU.ini from same directory the exe is launched.
+It reports error messages in the ini file.
+
+Have to rename the filenames a bit. The map file to be called KeyTransU.map
+Will have an ini file to go along with it to store the persistent information.
+Hence KeyTransU.ini is the ini file, which stores the name of the last map
+file used. It then attempts to load that map file on program restart.
+We load only map files present in the installed directory, ie the directory
+from which the program is run. All such map files are presented in 
+the tray bar icon, with a Tick mark present next to the one currently loaded.
+Added a popup side menu off the tray bar icon menu, which says "Map files".
+On expanding it shall list the names of the map files available to be loaded.
+The currently loaded one will be ticked. Allow a max of 10 map files.
+
+OK, no ini file. It lists all the .map files found in the invoked directory.
+It loads the KeyTransU.map file on default and ticks it in the menu.
+User can then choose any other that he wants.
+
+Corrected unicode injection by sending 2 structs per unicode, one keypress
+and the other key release. Otherwise it wasnt printing two characters
+which are the same, example II when pressing TAB TAB 2.
+
+---------------------------------------------------------------------------
+WEIRD -> Check the code under the default case of wmId. MapFileIndex = wmId -
+SWM_MAPFILE_START gives me 8 more than what it should be. Example:
+wmId: 32773, SWM_MAPFILE_START: 32772, wmId - SWM_MAPFILE_START prints out 9!
+------------------------------------------------------------------
+
+Packaging:
+	Have to bundle the map files as well. Copy over the Vutam.map to
+KeyTransU.map.

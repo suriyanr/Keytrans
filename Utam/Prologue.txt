@@ -1,0 +1,62 @@
+Prologue:
+=========
+   The Tamil "Type As You Write" endeavour was started with the twin 
+objectives:
+
+   A) To design a keyboard driver with mappings suitable for those who
+know writing (in) Tamil AND literate in English, to minimise load on 
+(human) memory, and
+   B) To minimise file storage (disk) space.
+ 
+   The obvious choice is "Transliteration", with a few deviations. By 
+mapping the consonants with u and U vowel markers in the SHIFT and 
+CTRL+ALT baskets, one's effort in remembering the keyboard layout becomes 
+minimal. The naming of the Font also keeps one reminding of the scheme.
+ 
+   Both the above mentioned goals have been proved in Vutam and later 
+in Vutam2.
+ 
+   Now, since the defacto standard is Unicode, these objectives are to be 
+proved in it, knowing that Unicode doesn't as yet support objective (B). 
+Since "Phonetic" is a subset of "Type As You Write", "Phonetic" is also 
+available as an option in Utam, with mappings as in "Type As You Write" 
+and with cross mapping benefits.
+ 
+   Thus Utam doesn't meet objective (B). But, it covers a wider audience 
+since its "Phonetic" users need not know to write Tamil; literacy in 
+English is all that's required from them.
+ 
+   Thanks to James Kass <jameskass@att.net> and, to Umar 
+<umarthambi@gmail.com> for their kind guidance and timely help.
+ 
+   Unicode compliant "Type As You Write" KBD driver, Utam.zip (67kb) 
+with font file(s), is available free at:
+http://sarovar.org/projects/keytrans/
+ 
+   It has two options: a) Type as You Write & b) Phonetic. It works in 
+ALL Windows OSs. Vutam and Vutam2 are also available there, still.
+ 
+   Thanks to all those kind hearts who feel the effort is worth all the 
+trouble!
+ 
+Yours,
+V.Ramasami,
+Aruppukottai,
+TamilNadu.
+
+PS:
+   Any legal owners of ttf font files, desirous of converting them free 
+of charge, suitable to be driven by Utam.exe may contact me by post, 
+provided:
+
+   (1) They take responsibility of taking over on themselves and protecting 
+me from any legal wrangles connected with the convertion job.
+ 
+   (2) They permit any one to use the said modified fonts for any purpose, 
+free, irrespective of the source of obtaining them.
+ 
+   Legal experts are welcome to draft (for free), a suitable agreement to 
+be signed by the above beneficieries, and to advise me (for free), of 
+Indian legal procedures connected with the said agreement.
+ 
+
