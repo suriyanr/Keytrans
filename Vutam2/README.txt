@@ -97,7 +97,7 @@ THANKS:
 
    The "TrayBar Icon howto" was mostly borrowed from there.
 
-4. www.sarovar.org
+4. github, www.sarovar.org (now defunct)
    For kindly hosting this open source project.
 
 
@@ -150,6 +150,7 @@ SOURCE CODE:
 
 This program was written to compile with MinGW, a port of GCC to Windows.
 You can find out about it at http://www.mingw.org.
+Author - Suriyan Ramasami <suriyan.r@gmail.com>
 
 
 CONTACT:
