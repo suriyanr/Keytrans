@@ -1,3 +1,6 @@
+CROSS_COMPILE=i586-mingw32msvc
+export CROSS_COMPILE
+
 all:
 	cd Dll; make all
 	cd Icons; make all

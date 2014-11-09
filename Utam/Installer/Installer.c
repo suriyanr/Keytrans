@@ -15,7 +15,7 @@
 #include "PackTamGramMap.h"
 #include "PackTamPhonMap.h"
 #include "PackEngPhonMap.h"
-#include "PackVutamMap.h"
+#include "PackVuTamMap.h"
 
 /* File sizes for the below can be got from Installer.h */
 #include "Installer.h"
@@ -284,11 +284,11 @@ int retval = 0;
    retval += MyCreateFile(fullfilepath, KeyTransU_TamPhon, LENGTH_TAMPHONMAP);
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAMMAP);
-   retval += MyCreateFile(fullfilepath, KeyTransU_Vutam, LENGTH_VUTAMMAP);
+   retval += MyCreateFile(fullfilepath, KeyTransU_VuTam, LENGTH_VUTAMMAP);
 
    // Also create KeyTransU.map same as KeyTransU_Vutam.map
    sprintf(fullfilepath, "%s\\%s", programpath, "KeyTransU.map");
-   retval += MyCreateFile(fullfilepath, KeyTransU_Vutam, LENGTH_VUTAMMAP);
+   retval += MyCreateFile(fullfilepath, KeyTransU_VuTam, LENGTH_VUTAMMAP);
    
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSU);
