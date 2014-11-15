@@ -1,4 +1,8 @@
-CROSS_COMPILE=i586-mingw32msvc
+# Ubuntu
+#CROSS_COMPILE=i586-mingw32msvc
+# OL 7.0
+CROSS_COMPILE=i686-w64-mingw32
+
 export CROSS_COMPILE
 
 all:
@@ -7,6 +11,7 @@ all:
 	cd Main; make all
 	cd Font; make all
 	cd Sample; make all
+	cd xd; make all
 
 clean:
 	cd Dll; make clean
@@ -14,6 +19,7 @@ clean:
 	cd Main; make clean
 	cd Font; make clean
 	cd Installer; make clean
+	cd xd; make clean
 	rm -f KeyTransU.zip
 	rm -f Vutam3.zip
 	rm -f Package/README.txt
