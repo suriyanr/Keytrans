@@ -2,7 +2,10 @@
 #include <windows.h>
 
 #include <winable.h>
-#define KEYEVENTF_UNICODE 0x00000004
+
+#ifndef KEYEVENTF_UNICODE
+# define KEYEVENTF_UNICODE 0x00000004
+#endif
 
 #include "KeyTrans2HookU.h" 
 

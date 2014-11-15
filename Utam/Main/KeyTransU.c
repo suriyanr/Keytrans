@@ -28,9 +28,18 @@ char str_debug[512];
 // Message numbers for the (max) 10 map files.
 #define SWM_MAPFILE_START    WM_APP + 4
 
-#define NOTIFYICONDATA_V1_SIZE 88
-#define NOTIFYICONDATA_V2_SIZE 488
-#define NOTIFYICONDATA_V3_SIZE 504
+#ifndef NOTIFYICONDATA_V1_SIZE
+# define NOTIFYICONDATA_V1_SIZE 88
+#endif
+
+#ifndef NOTIFYICONDATA_V2_SIZE
+# define NOTIFYICONDATA_V2_SIZE 488
+#endif
+
+#ifndef NOTIFYICONDATA_V3_SIZE
+# define NOTIFYICONDATA_V3_SIZE 504
+#endif
+
 #define IDI_MYICON 201 // Got from Icon.rc file.
 #define TRAYICONID 1
 
