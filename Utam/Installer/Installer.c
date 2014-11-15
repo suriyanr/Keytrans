@@ -17,9 +17,6 @@
 #include "PackEngPhonMap.h"
 #include "PackVuTamMap.h"
 
-/* File sizes for the below can be got from Installer.h */
-#include "Installer.h"
-
 #define NAME_KEYTRANSU       "KeyTransU.exe"
 #define NAME_KEYTRANSUDLL    "KeyTransU.dll"
 #define NAME_UTAMTTF         "Utam.ttf"
@@ -263,32 +260,32 @@ int retval = 0;
    strcat(desktop, "\\Vutam3.lnk"); // Link name on DeskTop
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSU);
-   retval = MyCreateFile(fullfilepath, KeyTransU, LENGTH_KEYTRANSU);
+   retval = MyCreateFile(fullfilepath, PackKeyTransU, sizeof(PackKeyTransU));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSUDLL);
-   retval += MyCreateFile(fullfilepath, KeyTransUdll, LENGTH_KEYTRANSUDLL);
+   retval += MyCreateFile(fullfilepath, PackKeyTransUDll, sizeof(PackKeyTransUDll));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_UTAMTTF);
-   retval += MyCreateFile(fullfilepath, Utam, LENGTH_UTAMTTF);
+   retval += MyCreateFile(fullfilepath, PackUtamTTF, sizeof(PackUtamTTF));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_README);
-   retval += MyCreateFile(fullfilepath, README, LENGTH_README);
+   retval += MyCreateFile(fullfilepath, PackReadme, sizeof(PackReadme));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_ENGPHONMAP);
-   retval += MyCreateFile(fullfilepath, KeyTransU_EngPhon, LENGTH_ENGPHONMAP);
+   retval += MyCreateFile(fullfilepath, PackEngPhonMap, sizeof(PackEngPhonMap));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAMGRAMMAP);
-   retval += MyCreateFile(fullfilepath, KeyTransU_TamGram, LENGTH_TAMGRAMMAP);
+   retval += MyCreateFile(fullfilepath, PackTamGramMap, sizeof(PackTamGramMap));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAMPHONMAP);
-   retval += MyCreateFile(fullfilepath, KeyTransU_TamPhon, LENGTH_TAMPHONMAP);
+   retval += MyCreateFile(fullfilepath, PackTamPhonMap, sizeof(PackTamPhonMap));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAMMAP);
-   retval += MyCreateFile(fullfilepath, KeyTransU_VuTam, LENGTH_VUTAMMAP);
+   retval += MyCreateFile(fullfilepath, PackVuTamMap, sizeof(PackVuTamMap));
 
    // Also create KeyTransU.map same as KeyTransU_Vutam.map
    sprintf(fullfilepath, "%s\\%s", programpath, "KeyTransU.map");
-   retval += MyCreateFile(fullfilepath, KeyTransU_VuTam, LENGTH_VUTAMMAP);
+   retval += MyCreateFile(fullfilepath, PackVuTamMap, sizeof(PackVuTamMap));
    
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSU);
