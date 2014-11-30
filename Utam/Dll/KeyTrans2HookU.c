@@ -783,12 +783,20 @@ unsigned char vk;
 
       // Initialise bucket to BUCKET1
       bucket = BUCKET1;
+#ifdef DEBUG
+      sprintf(str_debug, "bucket is BUCKET1\n");
+      log_string(str_debug);
+#endif
 
       // Lets take care of the Shift and Caps variation for Bucket two
       if ( (CtrlOn == 0) && (AltOn == 0) ) {
          if ( ((CapsOn == 0) && (ShiftOn == 1)) ||
               ((CapsOn == 1) && (ShiftOn == 0)) ) {
             bucket = BUCKET2;
+#ifdef DEBUG
+            sprintf(str_debug, "bucket is BUCKET2\n");
+            log_string(str_debug);
+#endif
          }
       }
 
@@ -804,6 +812,10 @@ unsigned char vk;
       // Bucket 3 is Alt
       if ( (AltOn == 1) && (CtrlOn == 0) && (CapsOn == 0) && (ShiftOn == 0) ) {
          bucket = BUCKET3;
+#ifdef DEBUG
+         sprintf(str_debug, "bucket is BUCKET3\n");
+         log_string(str_debug);
+#endif
       }
 
 #endif
@@ -811,6 +823,10 @@ unsigned char vk;
       // What we have pending is Bucket 4.
       if ( (AltOn == 1) && (CtrlOn == 1) && (CapsOn == 0) && (ShiftOn == 0) ) {
          bucket = BUCKET4;
+#ifdef DEBUG
+         sprintf(str_debug, "bucket is BUCKET4\n");
+         log_string(str_debug);
+#endif
       }
 
       // Lets log the key.
@@ -953,6 +969,21 @@ unsigned char vk;
 #endif
          }
 
+	// Test the theory that we need to release the Alt Key before injection.
+	// Yes, it indeed is true.
+	if (AltOn) {
+           memset(Input, 0, sizeof(Input));
+            Input[0].type = INPUT_KEYBOARD;
+            Input[0].ki.wScan = SCAN_ALT;
+	    Input[0].ki.wVk = VK_ALT;
+            Input[0].ki.dwFlags = KEYEVENTF_SCANCODE|KEYEVENTF_KEYUP;
+            SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
+#ifdef DEBUG
+         sprintf(str_debug, "Injecting (Alt release) unicode. SendInput UNICODE returned %d\n", SendInputRetVal);
+         log_string(str_debug);
+#endif
+	}
+
          // Lets inject using the SendInput() function.
          // We now inject the RHS for this LHS.
          memset(Input, 0, sizeof(Input));
@@ -970,6 +1001,21 @@ unsigned char vk;
          sprintf(str_debug, "Injecting %d (press and release) unicode. SendInput UNICODE returned %d\n", 2 * count, SendInputRetVal);
          log_string(str_debug);
 #endif
+
+	// If we had released the Alt key as part of the injection
+	// restore it. ie, Press it back again
+	if (AltOn) {
+           memset(Input, 0, sizeof(Input));
+            Input[0].type = INPUT_KEYBOARD;
+            Input[0].ki.wScan = SCAN_ALT;
+	    Input[0].ki.wVk = VK_ALT;
+            Input[0].ki.dwFlags = KEYEVENTF_SCANCODE;
+            SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
+#ifdef DEBUG
+         sprintf(str_debug, "Injecting (Alt press) unicode. SendInput UNICODE returned %d\n", SendInputRetVal);
+         log_string(str_debug);
+#endif
+	}
 
          // We eat this keystroke as we have translated it.
          return(-1);
