@@ -587,8 +587,8 @@ int TempNum;
 // Normal = Bucket 1 translations.
 // CapsLock On and Shift not pressed or CapsLock off and Shift pressed
 //   => Bucket 2 translations.
-// Ctrl and Alt and pressed => Bucket 3 translations.
-// Ctrl and Shift and Alt pressed => Bucket 4 Translations.
+// Alt pressed => Bucket 3 translations.
+// Ctrl and Alt pressed => Bucket 4 Translations.
 static LRESULT CALLBACK KHookProc(int code, WPARAM wParam, LPARAM lParam)
 {
 int keyrelease;
