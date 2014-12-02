@@ -770,14 +770,29 @@ unsigned char vk;
          return CallNextHookEx(hhk, code, wParam, lParam);
       }
 
+      // We need to do nothing if a key is pressed and the following is true
+      // (CtrlOn == 1) && (AltOn == 0) (doesnt matter shift or caps)
+      // (CtrlOn == 1) && (AltOn == 1) && ((ShiftOn == 1) || (CapsOn == 1))
+      if ((CtrlOn == 1) && (AltOn == 0)) {
+#ifdef DEBUG
+           sprintf(str_debug, "Ctrl and no Alt - no bucket\n");
+           log_string(str_debug);
+#endif
+         return CallNextHookEx(hhk, code, wParam, lParam);
+      }
+      if ((CtrlOn == 1) && (AltOn == 1) && ((ShiftOn == 1) || (CapsOn == 1))) {
+#ifdef DEBUG
+           sprintf(str_debug, "Ctrl and Alt and Caps/Shift - no bucket\n");
+           log_string(str_debug);
+#endif
+         return CallNextHookEx(hhk, code, wParam, lParam);
+      }
+
       // Lets get the bucket.
-      // If Ctrl pressed and Alt pressed = bucket3.
       // If Capslock is off and shift not pressed = bucket1
       // If Capslock is on and shift not pressed = bucket2
       // If Capslock is on and shift is pressed = bucket1
       // If Capslock is off and shift is pressed = bucket2
-      // If bucket2 and ctrl and alt is pressed = bucket4
-      // NEW CODE Change:
       // If Alt pressed = bucket3.
       // Ctrl + Alt = bucket 4.
 
