@@ -1,3 +1,4 @@
 all:
 	cp *.map ../Package/
-	cp ../Package/KeyTransU_VuTam.map ../Package/KeyTransU.map
+	cp Tam_Maps.txt ../Package/
+	cp Vutam2Special.bmp ../Package/
