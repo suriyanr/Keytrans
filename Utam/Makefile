@@ -26,6 +26,8 @@ clean:
 	rm -f Package/*.map
 	rm -f Package/KeyTransU.ini
 	rm -f Package/logger.txt
+	rm -f Package/Tam_Maps.txt
+	rm -f Package/Vutam2Special.bmp
 
 release: clean all
 	cp README.txt Package/
