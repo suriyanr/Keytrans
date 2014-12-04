@@ -31,6 +31,6 @@ clean:
 
 release: clean all
 	cp README.txt Package/
-	zip -r KeyTransU.zip Package/KeyTransU.exe Package/Utam.ttf Package/KeyTransU.dll Package/README.txt Package/KeyTransU.map Package/KeyTransU_EngPhon.map Package/KeyTransU_TamGram.map Package/KeyTransU_TamPhon.map Package/KeyTransU_Vutam.map
+	zip -r KeyTransU.zip Package/KeyTransU.exe Package/KeyTransU.dll Package/README.txt Package/Tam_Maps.txt Package/Vutam2Special.bmp Package/Vutam2.ttf Package/Vutam3.ttf Package/KeyTransU_EngTranslit.map Package/KeyTransU_TACEphon.map Package/KeyTransU_TamPhon.map Package/KeyTransU.map Package/KeyTransU_TamNet99.map
 	cd Installer; make all
 	zip Vutam3.zip Vutam3.exe INSTALL.txt
