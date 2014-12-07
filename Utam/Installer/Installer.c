@@ -7,24 +7,40 @@
 #include <sys/stat.h>
 
 // Below are the files as arrays.
+// EXE and DLL
 #include "PackKeyTransU.h"
 #include "PackKeyTransUDll.h"
-#include "PackUtamTTF.h"
+
+// TXT files
+#include "PackTam_Maps.h"
 #include "PackReadme.h"
-// The 4 map files.
-#include "PackTamGramMap.h"
+
+// TTF files
+#include "PackVutam2TTF.h"
+#include "PackVutam3TTF.h"
+
+// BMP files
+#include "PackVutam2SpecialBMP.h"
+
+// The 5 map files.
+#include "PackKeyTransUMap.h"
+#include "PackEngTranslitMap.h"
+#include "PackTACEphonMap.h"
+#include "PackTamNet99Map.h"
 #include "PackTamPhonMap.h"
-#include "PackEngPhonMap.h"
-#include "PackVuTamMap.h"
 
 #define NAME_KEYTRANSU       "KeyTransU.exe"
 #define NAME_KEYTRANSUDLL    "KeyTransU.dll"
-#define NAME_UTAMTTF         "Utam.ttf"
 #define NAME_README          "README.txt"
-#define NAME_TAMGRAMMAP      "KeyTransU_TamGram.map"
+#define NAME_TAM_MAPS        "Tam_Maps.txt"
+#define NAME_VUTAM2TTF       "Vutam2.ttf"
+#define NAME_VUTAM3TTF       "Vutam3.ttf"
+#define NAME_VUTAM2SPECIALBMP "Vutam2Special.bmp"
+#define NAME_ENGTRANSLITMAP  "KeyTransU_EngTranslit.map"
+#define NAME_KEYTRANSUMAP    "KeyTransU.map"
+#define NAME_TACEPHONEMAP    "KeyTransU_TACEphon.map"
+#define NAME_TAMNET99MAP     "KeyTransU_TamNet99.map"
 #define NAME_TAMPHONMAP      "KeyTransU_TamPhon.map"
-#define NAME_ENGPHONMAP      "KeyTransU_EngPhon.map"
-#define NAME_VUTAMMAP        "KeyTransU_Vutam.map"
 
 /* global semaphore so only one instance can run. */
 HANDLE OnlyOneSem = NULL;
@@ -265,33 +281,42 @@ int retval = 0;
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSUDLL);
    retval += MyCreateFile(fullfilepath, PackKeyTransUDll, sizeof(PackKeyTransUDll));
 
-   sprintf(fullfilepath, "%s\\%s", programpath, NAME_UTAMTTF);
-   retval += MyCreateFile(fullfilepath, PackUtamTTF, sizeof(PackUtamTTF));
-
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_README);
    retval += MyCreateFile(fullfilepath, PackReadme, sizeof(PackReadme));
 
-   sprintf(fullfilepath, "%s\\%s", programpath, NAME_ENGPHONMAP);
-   retval += MyCreateFile(fullfilepath, PackEngPhonMap, sizeof(PackEngPhonMap));
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAM_MAPS);
+   retval += MyCreateFile(fullfilepath, PackTam_Maps, sizeof(PackTam_Maps));
 
-   sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAMGRAMMAP);
-   retval += MyCreateFile(fullfilepath, PackTamGramMap, sizeof(PackTamGramMap));
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAM2TTF);
+   retval += MyCreateFile(fullfilepath, PackVutam2TTF, sizeof(PackVutam2TTF));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAM3TTF);
+   retval += MyCreateFile(fullfilepath, PackVutam3TTF, sizeof(PackVutam3TTF));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAM2SPECIALBMP);
+   retval += MyCreateFile(fullfilepath, PackVutam2SpecialBMP, sizeof(PackVutam2SpecialBMP));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_ENGTRANSLITMAP);
+   retval += MyCreateFile(fullfilepath, PackEngTranslitMap, sizeof(PackEngTranslitMap));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSUMAP);
+   retval += MyCreateFile(fullfilepath, PackKeyTransUMap, sizeof(PackKeyTransUMap));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_TACEPHONEMAP);
+   retval += MyCreateFile(fullfilepath, PackTACEphonMap, sizeof(PackTACEphonMap));
+
+   sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAMNET99MAP);
+   retval += MyCreateFile(fullfilepath, PackTamNet99Map, sizeof(PackTamNet99Map));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_TAMPHONMAP);
    retval += MyCreateFile(fullfilepath, PackTamPhonMap, sizeof(PackTamPhonMap));
 
-   sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAMMAP);
-   retval += MyCreateFile(fullfilepath, PackVuTamMap, sizeof(PackVuTamMap));
-
-   // Also create KeyTransU.map same as KeyTransU_Vutam.map
-   sprintf(fullfilepath, "%s\\%s", programpath, "KeyTransU.map");
-   retval += MyCreateFile(fullfilepath, PackVuTamMap, sizeof(PackVuTamMap));
-   
-
+   // Create Desktop Link
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSU);
    MakeDesktopLink(desktop, fullfilepath);
 
-   if (retval == 9) return(1);
+   // We create 12 files above
+   if (retval == 12) return(1);
    else return(0);
 }
 

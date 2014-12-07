@@ -2,7 +2,7 @@ XD = ../xd/xd
 
 all: Vutam3.exe
 
-Vutam3.exe: DesktopLink.o PackKeyTransU.h PackKeyTransUDll.h PackUtamTTF.h PackReadme.h PackTamGramMap.h PackVuTamMap.h PackEngPhonMap.h PackTamPhonMap.h Installer.o
+Vutam3.exe: DesktopLink.o PackKeyTransU.h PackKeyTransUDll.h PackTam_Maps.h PackTam_Maps.h PackReadme.h PackVutam2TTF.h PackVutam3TTF.h PackVutam2TTFinTACEBMP.h PackEngTranslitMap.h PackKeyTransUMap.h PackTACEphonMap.h PackTamNet99Map.h PackTamPhonMap.h Installer.o
 	$(CROSS_COMPILE)-gcc -s -mwindows Installer.o DesktopLink.o -o ../Vutam3.exe -lole32 -lshell32 -luuid
 
 Installer.o: Installer.c
@@ -19,33 +19,38 @@ PackKeyTransUDll.h:
 	$(XD) -dPackKeyTransUDll ../Package/KeyTransUdll > PackKeyTransUDll.h
 	rm -f ../Package/KeyTransUdll
 
-PackUtamTTF.h:
-	$(XD) -dPackUtamTTF ../Package/Utam.ttf > PackUtamTTF.h
+PackTam_Maps.h:
+	$(XD) -dPackTam_Maps ../Package/Tam_Maps.txt > PackTam_Maps.h
 
 PackReadme.h:
 	$(XD) -dPackReadme ../Package/README.txt > PackReadme.h
 
-PackTamGramMap.h:
-	$(XD) -dPackTamGramMap ../Package/KeyTransU_TamGram.map > PackTamGramMap.h
+PackVutam2TTF.h:
+	$(XD) -dPackVutam2TTF ../Package/Vutam2.ttf > PackVutam2TTF.h
 
-PackVuTamMap.h:
-	$(XD) -dPackVuTamMap ../Package/KeyTransU_VuTam.map > PackVuTamMap.h
+PackVutam3TTF.h:
+	$(XD) -dPackVutam3TTF ../Package/Vutam3.ttf > PackVutam3TTF.h
+
+PackVutam2TTFinTACEBMP.h:
+	$(XD) -dPackVutam2TTFinTACEBMP ../Package/Vutam2TTFinTACE.bmp > PackVutam2TTFinTACEBMP.h
+
+PackEngTranslitMap.h:
+	$(XD) -dPackEngTranslitMap ../Package/KeyTransU_EngTranslit.map > PackEngTranslitMap.h
+
+PackKeyTransUMap.h:
+	$(XD) -dPackKeyTransUMap ../Package/KeyTransU.map > PackKeyTransUMap.h
+
+PackTACEphonMap.h:
+	$(XD) -dPackTACEphonMap ../Package/KeyTransU_TACEphon.map > PackTACEphonMap.h
+
+PackTamNet99Map.h:
+	$(XD) -dPackTamNet99Map ../Package/KeyTransU_TamNet99.map > PackTamNet99Map.h
 
 PackTamPhonMap.h:
 	$(XD) -dPackTamPhonMap ../Package/KeyTransU_TamPhon.map > PackTamPhonMap.h
 
-PackEngPhonMap.h:
-	$(XD) -dPackEngPhonMap ../Package/KeyTransU_EngPhon.map > PackEngPhonMap.h
-
 clean:
-	rm -f PackReadme.h
-	rm -f PackUtamTTF.h
-	rm -f PackKeyTransUDll.h
-	rm -f PackKeyTransU.h
-	rm -f PackTamGramMap.h
-	rm -f PackVuTamMap.h
-	rm -f PackTamPhonMap.h
-	rm -f PackEngPhonMap.h
+	rm -f Pack*.h
 	rm -f DesktopLink.o
 	rm -f Installer.o Installer.h
 	rm -f ../Vutam3.exe
