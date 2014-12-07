@@ -18,7 +18,7 @@
 char str_debug[512];
 #endif
 
-#define VERSION "October 20, 2008 - Version 3.0\n"
+#define VERSION "December 7, 2014 - Version 4.0\n"
 
 #define TRAY_MSG        WM_APP
 #define SWM_ENABLE      WM_APP + 1   // Enable the hook

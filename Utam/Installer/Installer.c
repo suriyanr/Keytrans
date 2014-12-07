@@ -273,7 +273,7 @@ int retval = 0;
 #ifdef DEBUG
    fprintf(stdout, "Desktop Path: %s\n", desktop);
 #endif
-   strcat(desktop, "\\Vutam3.lnk"); // Link name on DeskTop
+   strcat(desktop, "\\Vutam4.lnk"); // Link name on DeskTop
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_KEYTRANSU);
    retval = MyCreateFile(fullfilepath, PackKeyTransU, sizeof(PackKeyTransU));
