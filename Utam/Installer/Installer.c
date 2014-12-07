@@ -20,7 +20,7 @@
 #include "PackVutam3TTF.h"
 
 // BMP files
-#include "PackVutam2SpecialBMP.h"
+#include "PackVutam2TTFinTACEBMP.h"
 
 // The 5 map files.
 #include "PackKeyTransUMap.h"
@@ -35,7 +35,7 @@
 #define NAME_TAM_MAPS        "Tam_Maps.txt"
 #define NAME_VUTAM2TTF       "Vutam2.ttf"
 #define NAME_VUTAM3TTF       "Vutam3.ttf"
-#define NAME_VUTAM2SPECIALBMP "Vutam2Special.bmp"
+#define NAME_VUTAM2SPECIALBMP "Vutam2TTFinTACE.bmp"
 #define NAME_ENGTRANSLITMAP  "KeyTransU_EngTranslit.map"
 #define NAME_KEYTRANSUMAP    "KeyTransU.map"
 #define NAME_TACEPHONEMAP    "KeyTransU_TACEphon.map"
@@ -294,7 +294,7 @@ int retval = 0;
    retval += MyCreateFile(fullfilepath, PackVutam3TTF, sizeof(PackVutam3TTF));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_VUTAM2SPECIALBMP);
-   retval += MyCreateFile(fullfilepath, PackVutam2SpecialBMP, sizeof(PackVutam2SpecialBMP));
+   retval += MyCreateFile(fullfilepath, PackVutam2TTFinTACEBMP, sizeof(PackVutam2TTFinTACEBMP));
 
    sprintf(fullfilepath, "%s\\%s", programpath, NAME_ENGTRANSLITMAP);
    retval += MyCreateFile(fullfilepath, PackEngTranslitMap, sizeof(PackEngTranslitMap));

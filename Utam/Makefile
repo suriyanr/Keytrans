@@ -21,16 +21,17 @@ clean:
 	cd Installer; make clean
 	cd xd; make clean
 	rm -f KeyTransU.zip
-	rm -f Vutam3.zip
+	rm -f Vutam4.zip
+	rm -f Vutam4exe.zip
 	rm -f Package/README.txt
 	rm -f Package/*.map
 	rm -f Package/KeyTransU.ini
 	rm -f Package/logger.txt
 	rm -f Package/Tam_Maps.txt
-	rm -f Package/Vutam2Special.bmp
+	rm -f Package/Vutam2TTFinTACE.bmp
 
 release: clean all
 	cp README.txt Package/
-	zip -r KeyTransU.zip Package/KeyTransU.exe Package/KeyTransU.dll Package/README.txt Package/Tam_Maps.txt Package/Vutam2Special.bmp Package/Vutam2.ttf Package/Vutam3.ttf Package/KeyTransU_EngTranslit.map Package/KeyTransU_TACEphon.map Package/KeyTransU_TamPhon.map Package/KeyTransU.map Package/KeyTransU_TamNet99.map
+	zip -r Vutam4.zip Package/KeyTransU.exe Package/KeyTransU.dll Package/README.txt Package/Tam_Maps.txt Package/Vutam2TTFinTACE.bmp Package/Vutam2.ttf Package/Vutam3.ttf Package/KeyTransU_EngTranslit.map Package/KeyTransU_TACEphon.map Package/KeyTransU_TamPhon.map Package/KeyTransU.map Package/KeyTransU_TamNet99.map
 	cd Installer; make all
-	zip Vutam3.zip Vutam3.exe INSTALL.txt
+	zip Vutam4exe.zip Vutam4.exe INSTALL.txt

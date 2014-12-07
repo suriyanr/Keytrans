@@ -1,9 +1,9 @@
 XD = ../xd/xd
 
-all: Vutam3.exe
+all: Vutam4.exe
 
-Vutam3.exe: DesktopLink.o PackKeyTransU.h PackKeyTransUDll.h PackTam_Maps.h PackTam_Maps.h PackReadme.h PackVutam2TTF.h PackVutam3TTF.h PackVutam2TTFinTACEBMP.h PackEngTranslitMap.h PackKeyTransUMap.h PackTACEphonMap.h PackTamNet99Map.h PackTamPhonMap.h Installer.o
-	$(CROSS_COMPILE)-gcc -s -mwindows Installer.o DesktopLink.o -o ../Vutam3.exe -lole32 -lshell32 -luuid
+Vutam4.exe: DesktopLink.o PackKeyTransU.h PackKeyTransUDll.h PackTam_Maps.h PackTam_Maps.h PackReadme.h PackVutam2TTF.h PackVutam3TTF.h PackVutam2TTFinTACEBMP.h PackEngTranslitMap.h PackKeyTransUMap.h PackTACEphonMap.h PackTamNet99Map.h PackTamPhonMap.h Installer.o
+	$(CROSS_COMPILE)-gcc -s -mwindows Installer.o DesktopLink.o -o ../Vutam4.exe -lole32 -lshell32 -luuid
 
 Installer.o: Installer.c
 	$(CROSS_COMPILE)-gcc -O -c Installer.c -o Installer.o
@@ -53,4 +53,4 @@ clean:
 	rm -f Pack*.h
 	rm -f DesktopLink.o
 	rm -f Installer.o Installer.h
-	rm -f ../Vutam3.exe
+	rm -f ../Vutam4.exe
