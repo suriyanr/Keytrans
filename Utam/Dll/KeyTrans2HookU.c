@@ -37,6 +37,7 @@ int __attribute__((section ("SHARED"),shared)) CapsOn = 0;
 int __attribute__((section ("SHARED"),shared)) ShiftOn = 0;
 int __attribute__((section ("SHARED"),shared)) CtrlOn = 0;
 int __attribute__((section ("SHARED"),shared)) AltOn = 0;
+int __attribute__((section ("SHARED"),shared)) AltOnR = 0;
 
 HHOOK __attribute__((section ("SHARED"),shared)) hhk = NULL;
 
@@ -591,6 +592,7 @@ int TempNum;
 // Ctrl and Alt pressed => Bucket 4 Translations.
 static LRESULT CALLBACK KHookProc(int code, WPARAM wParam, LPARAM lParam)
 {
+int extended;
 int keyrelease;
 unsigned char vk;
 
@@ -611,7 +613,7 @@ unsigned char vk;
 
 //   repeatcount = lParam & 0x0ffff;
 //   scancode    = (lParam & 0xff0000) >> 16;
-//   extended    = (lParam & 0x1000000) >> 24;
+   extended    = (lParam & 0x1000000) >> 24;
 //   alt         = (lParam & 0x20000000) >> 29;
 //   prestate    = (lParam & 0x40000000) >> 30;
    keyrelease  = (lParam & 0x80000000) >> 31;
@@ -702,9 +704,12 @@ unsigned char vk;
       }
       else {
          AltOn = 1;
+         // Remember if Right Alt was pressed.
+         if (extended)
+           AltOnR = 1;
       }
 #ifdef DEBUG
-      sprintf(str_debug, "Alt noted as %d\n", AltOn);
+      sprintf(str_debug, "Alt noted as %d Extended: %d\n", AltOn, AltOnR);
       log_string(str_debug);
 #endif
 
@@ -988,14 +993,16 @@ unsigned char vk;
 	// Yes, it indeed is true.
 	if (AltOn) {
            memset(Input, 0, sizeof(Input));
-            Input[0].type = INPUT_KEYBOARD;
-            Input[0].ki.wScan = SCAN_ALT;
-	    Input[0].ki.wVk = VK_ALT;
-            Input[0].ki.dwFlags = KEYEVENTF_SCANCODE|KEYEVENTF_KEYUP;
-            SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
+           Input[0].type = INPUT_KEYBOARD;
+           Input[0].ki.wScan = SCAN_ALT;
+           if (AltOnR)
+              Input[0].ki.dwFlags = KEYEVENTF_SCANCODE|KEYEVENTF_EXTENDEDKEY|KEYEVENTF_KEYUP;
+           else
+              Input[0].ki.dwFlags = KEYEVENTF_SCANCODE|KEYEVENTF_KEYUP;
+           SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
 #ifdef DEBUG
-         sprintf(str_debug, "Injecting (Alt release) unicode. SendInput UNICODE returned %d\n", SendInputRetVal);
-         log_string(str_debug);
+           sprintf(str_debug, "Injecting (Alt release) extended: %d\n", AltOnR);
+           log_string(str_debug);
 #endif
 	}
 
@@ -1021,14 +1028,16 @@ unsigned char vk;
 	// restore it. ie, Press it back again
 	if (AltOn) {
            memset(Input, 0, sizeof(Input));
-            Input[0].type = INPUT_KEYBOARD;
-            Input[0].ki.wScan = SCAN_ALT;
-	    Input[0].ki.wVk = VK_ALT;
-            Input[0].ki.dwFlags = KEYEVENTF_SCANCODE;
-            SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
+           Input[0].type = INPUT_KEYBOARD;
+           Input[0].ki.wScan = SCAN_ALT;
+           if (AltOnR)
+              Input[0].ki.dwFlags = KEYEVENTF_SCANCODE|KEYEVENTF_EXTENDEDKEY;
+           else
+              Input[0].ki.dwFlags = KEYEVENTF_SCANCODE;
+           SendInputRetVal = SendInput(1, Input, sizeof(INPUT));
 #ifdef DEBUG
-         sprintf(str_debug, "Injecting (Alt press) unicode. SendInput UNICODE returned %d\n", SendInputRetVal);
-         log_string(str_debug);
+           sprintf(str_debug, "Injecting (Alt press) extended: %d\n", AltOnR);
+           log_string(str_debug);
 #endif
 	}
 
