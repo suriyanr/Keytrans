@@ -701,6 +701,7 @@ unsigned char vk;
    if ( (vk == VK_MENU) || (vk == VK_LMENU) || (vk == VK_RMENU) ) {
       if (keyrelease == 1) {
          AltOn = 0;
+         AltOnR = 0;
       }
       else {
          AltOn = 1;
